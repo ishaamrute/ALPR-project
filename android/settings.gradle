@@ -1,4 +1,4 @@
-rootProject.name = 'ALPRproject'
+rootProject.name = 'AwesomeProject'
 
 include ':app'
 include ':openalpr'
