@@ -1,9 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   AppRegistry,
@@ -22,8 +16,7 @@ const styles = StyleSheet.create({
   textContainer: {
     position: 'absolute',
     top: 100,
-    right: 50,
-    bottom: 0,
+    left: 50,
   },
   text: {
     textAlign: 'center',
@@ -34,27 +27,6 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     alignItems: 'center',
   },
-  overlay: {
-    position: 'absolute',
-    padding: 16,
-    alignItems: 'center',
-  },
-  topOverlay: {
-    top: 0,
-    left: 0,
-    right: 0,
-    backgroundColor: 'rgba(0, 255, 0, 0.4)',
-    alignItems: 'center',
-  },
-  bottomOverlay: {
-    right: 0,
-    left: 0,
-    bottom: 0,
-    backgroundColor: 'rgba(255,0,0,0.4)',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-  }
 });
 
 export default class AwesomeProject extends React.Component {
@@ -62,7 +34,6 @@ export default class AwesomeProject extends React.Component {
     super(props);
 
     this.camera = null;
-
     this.state = {
       camera: {
         aspect: Camera.constants.Aspect.fill,
@@ -82,10 +53,6 @@ export default class AwesomeProject extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <StatusBar
-          animated
-          hidden
-        />
         <Camera
           ref={(cam) => {
             this.camera = cam;
@@ -100,10 +67,6 @@ export default class AwesomeProject extends React.Component {
           torchMode={Camera.constants.TorchMode.off}
           touchToFocus
         />
-        <View style={[styles.overlay, styles.topOverlay]}>
-        </View>
-        <View style={[styles.overlay, styles.bottomOverlay]}>
-        </View>
         <View style={styles.textContainer}>
           <Text style={styles.text}>{this.state.plate}</Text>
         </View>
